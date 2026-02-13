@@ -6,8 +6,16 @@
 <body>
     <h1>ToDo list</h1>
 
+    <form action="/add" method="POST">
+        <input title="text" name="todo" placeholder="New task">
+        <button type="submit">Add</button>
+    </form>
+    
+    <!-- 箇条書きのリストを作成するための準備 -->
     <ul>
+        <!-- forを使って処理を繰り返す -->
         {% for todo in todos %}
+            <!-- jinja2を使いPythonから得たデータを箇条書きのリストとして表示 -->
             <li>{{ todo }}</li>
         {% endfor %}
     </ul>
